@@ -2,6 +2,7 @@ import { useEffect, useState, type FormEvent, type ReactNode } from 'react'
 import logo from './assets/logo.png'
 import './App.css'
 
+const YEAR = new Date().getFullYear()
 const EMAIL = 'contact@lactosense.org'
 const LINKEDIN = 'https://www.linkedin.com/company/lactosense'
 // TODO: replace with the real Instagram handle once confirmed
@@ -585,7 +586,7 @@ function Footer() {
           </nav>
         </div>
         <div className="footer__bottom">
-          <span>© {new Date().getFullYear()} Lactosense. All rights reserved.</span>
+          <span>© {YEAR} Lactosense. All rights reserved.</span>
           <span>Cambridge Research Park, Waterbeach, Cambridge CB25 9PD</span>
         </div>
       </div>
