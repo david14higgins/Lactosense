@@ -2,6 +2,8 @@
 
 Single-page marketing website for [Lactosense](https://www.linkedin.com/company/lactosense), a Cambridge biotechnology company developing rapid at-home diagnostics to improve postnatal care outcomes, starting with mastitis.
 
+**Live site:** https://david14higgins.github.io/Lactosense/
+
 Built with React, TypeScript and Vite.
 
 ## Getting started
