@@ -249,7 +249,7 @@ section[id] {
 
 /* ---------- Hero ---------- */
 .hero {
-  padding: calc(var(--nav-h) + 72px) 0 96px;
+  padding: calc(var(--nav-h) + 24px) 0 96px;
   background:
     radial-gradient(900px 500px at 85% 20%, rgba(122, 139, 111, 0.22), transparent 70%),
     radial-gradient(700px 400px at 0% 100%, rgba(109, 88, 81, 0.12), transparent 70%),
@@ -257,11 +257,44 @@ section[id] {
   overflow: hidden;
 }
 
+/* Molecule illustration: a soft, faded backdrop centred behind the logo */
+.hero::before {
+  content: '';
+  /* Image is portrait; rotate it 90deg so it spans the wide hero as a landscape backdrop */
+  --span: max(100vw, 160vh);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: var(--span);
+  width: calc(var(--span) * 0.5625);
+  background: url('./assets/molecules.png') center / 100% 100% no-repeat;
+  transform: translate(-50%, -50%) rotate(90deg);
+  mix-blend-mode: multiply;
+  opacity: 0.4;
+  -webkit-mask-image: radial-gradient(ellipse 50% 50% at 50% 50%, #000 30%, transparent 90%);
+  mask-image: radial-gradient(ellipse 50% 50% at 50% 50%, #000 30%, transparent 90%);
+  pointer-events: none;
+}
+
 .hero__grid {
-  display: grid;
-  grid-template-columns: 1.15fr 0.85fr;
-  gap: 56px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
   align-items: center;
+  text-align: center;
+  gap: 32px;
+}
+
+.hero__logo img {
+  width: clamp(180px, 26vw, 280px);
+  mix-blend-mode: multiply;
+}
+
+.hero__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 820px;
 }
 
 .hero h1 {
@@ -281,6 +314,7 @@ section[id] {
 
 .hero__actions {
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
   gap: 14px;
   margin-bottom: 40px;
@@ -288,6 +322,7 @@ section[id] {
 
 .badges {
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
   gap: 10px;
   list-style: none;
@@ -310,52 +345,6 @@ section[id] {
 
 .badge__icon {
   flex-shrink: 0;
-}
-
-.hero__art {
-  position: relative;
-  aspect-ratio: 1;
-  display: grid;
-  place-items: center;
-}
-
-.hero__art .orb {
-  position: absolute;
-  inset: 4%;
-  border-radius: 50%;
-  background: radial-gradient(circle at 35% 30%, var(--paper), var(--sage-light) 70%);
-  box-shadow: 0 40px 80px -40px rgba(34, 64, 42, 0.5);
-}
-
-.hero__art .ring {
-  position: absolute;
-  inset: 0;
-  border-radius: 50%;
-  border: 1.5px dashed rgba(34, 64, 42, 0.25);
-  animation: spin 80s linear infinite;
-}
-
-.hero__art .ring::after {
-  content: '';
-  position: absolute;
-  top: 12%;
-  left: 12%;
-  width: 14px;
-  height: 14px;
-  border-radius: 50%;
-  background: var(--brown);
-}
-
-.hero__art img {
-  position: relative;
-  width: 62%;
-  mix-blend-mode: multiply;
-}
-
-@keyframes spin {
-  to {
-    transform: rotate(360deg);
-  }
 }
 
 /* ---------- Story / mission ---------- */
@@ -1036,18 +1025,11 @@ section[id] {
     margin: 8px 0 0;
   }
 
-  .hero__grid,
   .waitlist,
   .contact,
   .two-col,
   .science__grid {
     grid-template-columns: 1fr;
-  }
-
-  .hero__art {
-    max-width: 360px;
-    margin-inline: auto;
-    order: -1;
   }
 
   .steps {

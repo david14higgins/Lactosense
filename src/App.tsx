@@ -128,7 +128,10 @@ function Hero() {
   return (
     <section id="home" className="hero">
       <div className="container hero__grid">
-        <div>
+        <div className="hero__logo">
+          <img src={logo} alt="Lactosense" />
+        </div>
+        <div className="hero__content">
           <span className="eyebrow">Cambridge-based</span>
           <h1>
             Science redefining the standard of care for <em>breastfeeding mothers</em>
@@ -165,11 +168,6 @@ function Hero() {
               Cambridge Research Park
             </li>
           </ul>
-        </div>
-        <div className="hero__art" aria-hidden="true">
-          <div className="orb" />
-          <div className="ring" />
-          <img src={logo} alt="" />
         </div>
       </div>
     </section>
