@@ -129,27 +129,41 @@ function Hero() {
     <section id="home" className="hero">
       <div className="container hero__grid">
         <div>
-          <span className="eyebrow">Cambridge · Biotechnology</span>
+          <span className="eyebrow">Cambridge-based</span>
           <h1>
-            Science that supports <em>every</em> postnatal journey
+            Science redefining the standard of care for <em>breastfeeding mothers</em>
           </h1>
           <p className="lead">
-            Lactosense is developing rapid, at-home diagnostics that give new mothers the confidence
-            to act early, starting with mastitis, and growing into a wider range of postnatal
-            care tools.
+            Our mission is to empower breastfeeding mothers in positive infant health outcomes
+            through rapid at-home diagnostics, initiating proactive action and support.
           </p>
           <div className="hero__actions">
             <a href="#waitlist" className="btn btn--primary">
               Join the waitlist
             </a>
             <a href="#product" className="btn btn--ghost">
-              Explore our first test
+              Explore our mastitis test
             </a>
           </div>
           <ul className="badges">
-            <li>King's College SPARK 2.0 graduate</li>
-            <li>King's E-Lab Award</li>
-            <li>Cambridge Research Park</li>
+            <li>
+              <svg
+                className="badge__icon"
+                viewBox="0 0 24 24"
+                width="14"
+                height="14"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
+                <circle cx="12" cy="10" r="3" />
+              </svg>
+              Cambridge Research Park
+            </li>
           </ul>
         </div>
         <div className="hero__art" aria-hidden="true">

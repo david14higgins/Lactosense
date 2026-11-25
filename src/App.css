@@ -303,6 +303,13 @@ section[id] {
   background: var(--paper);
   border: 1px solid var(--line);
   color: var(--green-700);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.badge__icon {
+  flex-shrink: 0;
 }
 
 .hero__art {
