@@ -1,6 +1,12 @@
 import { useEffect, useState, type FormEvent, type ReactNode } from 'react'
 import logo from './assets/logo.png'
 import kingsCollege from './assets/KingsCollege.jpeg'
+import emmaFarquhar from './assets/EmmaFarquhar.jpg'
+import ellenSheridan from './assets/EllenSheridan.jpg'
+import nickPassey from './assets/NickPassey.jpg'
+import ameenMirjan from './assets/AmeenMirjan.jpg'
+import shirleyChoo from './assets/ShirleyChoo.jpg'
+import cambridgeLogo from './assets/UoCLogo.png'
 import './App.css'
 
 const YEAR = new Date().getFullYear()
@@ -214,17 +220,23 @@ function Story() {
   )
 }
 
-function Person({ initials, name, role, bio, alt }: { initials: string; name: string; role: string; bio: string; alt?: boolean }) {
+function Founder({ photo, name, role, bio }: { photo: string; name: string; role: string; bio: string }) {
   return (
-    <div className="card person">
-      <div className={`avatar ${alt ? 'avatar--brown' : ''}`} aria-hidden="true">
-        {initials}
-      </div>
-      <div>
-        <h3>{name}</h3>
-        <p className="role">{role}</p>
-        <p>{bio}</p>
-      </div>
+    <div className="founder">
+      <img className="founder__photo" src={photo} alt={name} />
+      <h3>{name}</h3>
+      <p className="role">{role}</p>
+      <p className="founder__bio">{bio}</p>
+    </div>
+  )
+}
+
+function Advisor({ photo, name, role }: { photo: string; name: string; role: string }) {
+  return (
+    <div className="advisor">
+      <img className="advisor__photo" src={photo} alt={name} />
+      <strong>{name}</strong>
+      <small>{role}</small>
     </div>
   )
 }
@@ -236,44 +248,34 @@ function Team() {
         <Reveal className="section-head">
           <span className="eyebrow">Our team</span>
           <h2>Meet the founders</h2>
-          <p className="lead">
-            Two Cambridge scientists, combining molecular biology with medical device experience.
-          </p>
         </Reveal>
         <Reveal className="team-grid">
-          <Person
-            initials="EF"
+          <Founder
+            photo={emmaFarquhar}
             name="Emma Farquhar"
             role="Co-Founder & CEO"
             bio="Master's in Biochemistry, specialising in mammary gland molecular biology."
           />
-          <Person
-            initials="ES"
+          <Founder
+            photo={ellenSheridan}
             name="Ellen Sheridan"
-            role="Co-Founder & CTO"
+            role="Co-Founder & CSO"
             bio="PhD in Clinical Neuroscience; previously worked at Stryker in medical device development."
-            alt
           />
         </Reveal>
+        <Reveal className="uni-logo">
+          <img src={cambridgeLogo} alt="University of Cambridge" />
+        </Reveal>
         <Reveal>
-          {/* TODO: confirm each person's role/title (advisor, mentor, etc.) */}
-          <h3 className="subhead">Advisors &amp; supporters</h3>
+          <h3 className="subhead">Advisory board</h3>
           <div className="advisors">
-            <div className="advisor">
-              <div className="avatar avatar--brown" aria-hidden="true">NP</div>
-              <div><strong>Nick Passey</strong></div>
-            </div>
-            <div className="advisor">
-              <div className="avatar" aria-hidden="true">AM</div>
-              <div>
-                <strong>Ameen Mirjan</strong>
-                <small>Director of Digital Health Strategy, AstraZeneca</small>
-              </div>
-            </div>
-            <div className="advisor">
-              <div className="avatar avatar--brown" aria-hidden="true">SC</div>
-              <div><strong>Shirley Choo</strong></div>
-            </div>
+            <Advisor photo={nickPassey} name="Nick Passey" role="Head of R&D IT Strategy, AstraZeneca" />
+            <Advisor photo={ameenMirjan} name="Ameen Mirjan" role="Digital Health Strategy Director, AstraZeneca" />
+            <Advisor
+              photo={shirleyChoo}
+              name="Shirley Choo"
+              role="Investment Director, Board Director and Head of EU, HERhealthEQ"
+            />
           </div>
         </Reveal>
       </div>

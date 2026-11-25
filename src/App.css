@@ -436,35 +436,27 @@ section[id] {
 .team-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 24px;
-  margin-bottom: 64px;
+  gap: 32px;
+  margin-bottom: 56px;
 }
 
-.person {
-  display: flex;
-  gap: 24px;
-  align-items: flex-start;
+.founder {
+  text-align: center;
 }
 
-.avatar {
-  flex: none;
-  width: 88px;
-  height: 88px;
-  border-radius: 50%;
-  display: grid;
-  place-items: center;
-  font-family: var(--serif);
-  font-size: 1.9rem;
-  color: var(--cream);
-  background: linear-gradient(140deg, var(--green-700), var(--sage));
+.founder__photo {
+  width: min(100%, 300px);
+  aspect-ratio: 1;
+  margin-left: auto;
+  margin-right: auto;
+  object-fit: cover;
+  border-radius: 20px;
+  margin-bottom: 20px;
+  display: block;
 }
 
-.avatar--brown {
-  background: linear-gradient(140deg, var(--brown), #a08880);
-}
-
-.person h3 {
-  font-size: 1.4rem;
+.founder h3 {
+  font-size: 1.6rem;
   margin-bottom: 2px;
 }
 
@@ -477,36 +469,46 @@ section[id] {
   margin-bottom: 10px;
 }
 
-.person p:last-child {
-  margin: 0;
+.founder__bio {
+  margin: 0 auto;
+  max-width: 460px;
   color: var(--muted);
+}
+
+.uni-logo {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 64px;
+}
+
+.uni-logo img {
+  width: min(320px, 70%);
+  height: auto;
 }
 
 .subhead {
   font-size: 1.5rem;
-  margin-bottom: 20px;
+  margin-bottom: 24px;
+  text-align: center;
 }
 
 .advisors {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
+  gap: 24px;
 }
 
 .advisor {
-  display: flex;
-  gap: 14px;
-  align-items: center;
-  padding: 18px 20px;
-  border-radius: 16px;
-  background: var(--cream);
-  border: 1px solid var(--line);
+  text-align: center;
 }
 
-.advisor .avatar {
-  width: 48px;
-  height: 48px;
-  font-size: 1.05rem;
+.advisor__photo {
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin: 0 auto 16px;
+  display: block;
 }
 
 .advisor strong {
@@ -514,14 +516,15 @@ section[id] {
   font-family: var(--serif);
   font-weight: 500;
   color: var(--green-900);
-  font-size: 1.05rem;
+  font-size: 1.15rem;
 }
 
 .advisor small {
   color: var(--muted);
-  font-size: 0.82rem;
-  line-height: 1.3;
+  font-size: 0.88rem;
+  line-height: 1.4;
   display: block;
+  margin-top: 4px;
 }
 
 /* ---------- Waitlist ---------- */
@@ -1097,10 +1100,6 @@ section[id] {
 
   .card {
     padding: 28px;
-  }
-
-  .person {
-    flex-direction: column;
   }
 
   .outcome {
