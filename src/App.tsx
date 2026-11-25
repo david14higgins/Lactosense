@@ -1,5 +1,6 @@
 import { useEffect, useState, type FormEvent, type ReactNode } from 'react'
 import logo from './assets/logo.png'
+import kingsCollege from './assets/KingsCollege.jpeg'
 import './App.css'
 
 const YEAR = new Date().getFullYear()
@@ -183,22 +184,22 @@ function Story() {
           <h2>Rooted in Cambridge science, built around mothers</h2>
         </Reveal>
         <Reveal className="story">
-          <div className="card">
-            <h3>Our story</h3>
-            <p>
-              Lactosense was founded in 2026 by two Cambridge scientists, and is based in the heart
-              of Cambridge Research Park.
-            </p>
-            <p>
-              We combine deep knowledge of mammary gland biology and breastmilk composition with
-              experience in medical device development, to turn laboratory insight into tools
-              families can use at home.
-            </p>
-            <div className="pill-row">
-              <span className="pill">Founded 2026</span>
-              <span className="pill">Cambridge Research Park</span>
-              <span className="pill">Idea stage</span>
+          <div className="card card--story">
+            <div className="story-text">
+              <h3>Our story</h3>
+              <p>
+                Lactosense was founded in 2026 by two Cambridge scientists, and is based in the
+                heart of Cambridge Research Park.
+              </p>
+              <p>
+                We combine deep knowledge of mammary gland biology and breastmilk composition with
+                experience in medical device development, to turn laboratory insight into tools
+                families can use at home.
+              </p>
             </div>
+            <figure className="story-photo">
+              <img src={kingsCollege} alt="The Gatehouse of King's College, Cambridge, with visitors walking across the lawn" />
+            </figure>
           </div>
           <div className="card card--mission">
             <h3>Our mission</h3>
